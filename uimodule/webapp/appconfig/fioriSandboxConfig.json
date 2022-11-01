@@ -1,0 +1,9 @@
+{
+	"applications": {},
+	"bootstrapPlugins": {
+		"myFlpPlugin": {
+			"component": "com.myorg.myFlpPlugin",
+			"url": "../../../../../"
+		}
+	}
+}
