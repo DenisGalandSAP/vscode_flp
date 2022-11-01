@@ -26,29 +26,29 @@ server:
       afterMiddleware: compression
       configuration:
         debug: false
-        /sap/opu/odata/sap/:
-          target: http://<yourserver>:<yourserverport>
+        /sap/:
+          target: http://fiorid.sapregional.brussels/
           auth:
             fromEnv: false
-            user: <youruser>
-            pass: <yourpassword>
+            user: env:usr
+            pass: env:pwd
 builder:
   customTasks:
-  - name: ui5-task-nwabap-deployer
-    afterTask: generateVersionInfo
-    configuration:
-      resources:
-        path: dist/uimodule
-        pattern: "**/*.*"
-      connection:
-        server: http://<yourserver>:<yourserverport>
-      authentication:
-        user: <youruser>
-        password: <yourpassword>
-      ui5:
-        language: EN
-        package: <yourpackage>
-        bspContainer: <yourbspapplication>
-        bspContainerText: Generated with easy-ui5
-        transportNo: <yourtransport>
-        calculateApplicationIndex: true
+    - name: ui5-task-nwabap-deployer
+      afterTask: generateVersionInfo
+      configuration:
+        resources:
+          path: dist/uimodule
+          pattern: "**/*.*"
+        connection:
+          server: http://fiorid.sapregional.brussels/
+        authentication:
+          user: env:user
+          password: env:pwd
+        ui5:
+          language: EN
+          package: ZSPRB
+          bspContainer: FLPPDEN
+          bspContainerText: Generated with easy-ui5
+          transportNo: DRKG000000
+          calculateApplicationIndex: true

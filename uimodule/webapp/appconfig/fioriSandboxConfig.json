@@ -1,9 +1,16 @@
 {
-	"applications": {},
-	"bootstrapPlugins": {
-		"myFlpPlugin": {
-			"component": "com.myorg.myFlpPlugin",
-			"url": "../../../../../"
-		}
-	}
+  "applications": {
+    "AnalyticQuery-browse": {
+      "additionalInformation": "SAPUI5.Component=ssuite.vdm.viewbrowser.s1",
+      "applicationType": "URL",
+      "url": "sap/bc/ui5_ui5/sap/VIEWBROWSERS1",
+      "title": "View Browser"
+    }
+  },
+  "bootstrapPlugins": {
+    "myFlpPlugin": {
+      "component": "com.myorg.myFlpPlugin",
+      "url": "../../../../../"
+    }
+  }
 }
