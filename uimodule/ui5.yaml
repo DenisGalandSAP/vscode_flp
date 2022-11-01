@@ -27,7 +27,7 @@ server:
       configuration:
         debug: false
         /sap/:
-          target: http://fiorid.sapregional.brussels/
+          target: https://fiorid.sapregional.brussels/
           auth:
             fromEnv: false
             user: env:usr
@@ -41,7 +41,7 @@ builder:
           path: dist/uimodule
           pattern: "**/*.*"
         connection:
-          server: http://fiorid.sapregional.brussels/
+          server: https://fiorid.sapregional.brussels/
         authentication:
           user: env:user
           password: env:pwd
