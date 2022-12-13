@@ -20,7 +20,7 @@ sap.ui.define(
             { Guid: sGuidString, Semantic: sSemobj, Action: sAction },
             {
               success: () => {
-                sap.m.MessageBox.success('it works');
+                MessageBox.success('it works');
               },
               error: () => {
                 debugger;
