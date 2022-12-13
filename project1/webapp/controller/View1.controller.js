@@ -13,20 +13,58 @@ sap.ui.define(
         var s = '#test-display';
         var sSemobj = s.split('-')[0].split('#')[1];
         var sAction = s.split('-')[1];
+        // this.getView()
+        //   .getModel()
+        //   .read('/ZI_FLPTRACK', {
+        //     success: oResponse => {
+        //       debugger;
+        //     },
+        //     error: () => {
+        //       debugger;
+        //     }
+        //   });
         this.getView()
           .getModel()
-          .create(
-            '/ZI_FLPTRACK',
-            { Guid: sGuidString, Semantic: sSemobj, Action: sAction },
-            {
-              success: () => {
-                MessageBox.success('it works');
-              },
-              error: () => {
-                debugger;
-              }
+          .createEntry('/ZI_FLPTRACK', {
+            properties: {
+              Guid: sGuidString,
+              Semantic: sSemobj,
+              Action: sAction
             }
-          );
+          });
+        this.getView()
+          .getModel()
+          .submitChanges({
+            success: oResponse => {
+              debugger;
+              MessageBox.success('it works');
+            },
+            error: oError => {
+              debugger;
+            }
+          });
+        // oContext.created().then(
+        //   oResponse => {
+        //     debugger;
+        //   },
+        //   oError => {
+        //     debugger;
+        //   }
+        // );
+        // this.getView()
+        //   .getModel()
+        //   .create(
+        //     '/ZI_FLPTRACK',
+        //     { Guid: sGuidString, Semantic: sSemobj, Action: sAction },
+        //     {
+        //       success: () => {
+        //         MessageBox.success('it works');
+        //       },
+        //       error: () => {
+        //         debugger;
+        //       }
+        //     }
+        //   );
       },
       _createuuid: function () {
         return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
